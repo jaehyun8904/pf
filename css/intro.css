@@ -1,0 +1,193 @@
+@charset "utf-8" ; 
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family:  "New Amsterdam", sans-serif;
+    background-color: black;
+}
+html {
+    font-size: 10px;
+}
+.intro {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+/* =========================
+ECLIPSE
+========================= */
+.eclipse-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eclipse {
+  width: 72rem;
+  height: 72rem;
+  border-radius: 50%;
+  background: #000;
+  box-shadow:
+    0 0 18px rgba(255,255,255,0.95),
+    0 0 40px rgba(255,255,255,0.9),
+    0 0 70px rgba(255,255,255,0.7),
+    0 0 120px rgba(255,255,255,0.45);
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+.eclipse-wrap h1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: clamp(4rem, 5vw, 7rem);
+  letter-spacing: 0.08em;
+  font-weight: 400;
+  white-space: nowrap;
+  font-size: 15rem;
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.15),
+    0 0 18px rgba(255,255,255,0.1);
+}
+.eclipse-wrap P {
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  font-size: 4rem;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: clamp(4rem, 5vw, 7rem);
+  letter-spacing: 0.08em;
+  font-weight: 400;
+  white-space: nowrap;
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.15),
+    0 0 18px rgba(255,255,255,0.1);
+}
+
+/* =========================
+   STARS
+========================= */
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.8);
+  animation: twinkle 2.5s infinite ease-in-out;
+}
+
+.s1 { width: 2px; height: 2px; top: 60px; left: 60px; }
+.s2 { width: 1.5px; height: 1.5px; top: 110px; left: 150px; }
+.s3 { width: 2px; height: 2px; top: 180px; left: 140px; }
+.s4 { width: 1.5px; height: 1.5px; top: 120px; right: 90px; }
+.s5 { width: 2px; height: 2px; top: 220px; right: 140px; }
+.s6 { width: 1px; height: 1px; top: 310px; right: 70px; }
+.s7 { width: 1.5px; height: 1.5px; bottom: 120px; left: 90px; }
+.s8 { width: 2px; height: 2px; bottom: 80px; right: 180px; }
+
+/* =========================
+   PLANETS
+========================= */
+.planet {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.planet1 {
+  width: 14px;
+  height: 14px;
+  top: 135px;
+  right: 505px;
+  background: #bdbdbd;
+}
+
+.planet2 {
+  width: 48px;
+  height: 48px;
+  top: 96px;
+  right: 445px;
+  background: #3b3b3b;
+  opacity: 0.95;
+}
+.blackbox {
+    width: 45rem;
+    height: 45rem;
+    background-color: #fff;
+    z-index: 99;
+    
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 18px rgba(255,255,255,0.95),
+      0 0 40px rgba(255,255,255,0.9),
+      0 0 70px rgba(255,255,255,0.7),
+      0 0 120px rgba(255,255,255,0.45);
+  }
+  50% {
+    box-shadow:
+      0 0 20px rgba(255,255,255,1),
+      0 0 48px rgba(255,255,255,0.95),
+      0 0 85px rgba(255,255,255,0.78),
+      0 0 135px rgba(255,255,255,0.55);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.8);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .intro {
+    width: calc(100% - 30px);
+    height: 420px;
+  }
+
+  .eclipse-wrap {
+    width: 38rem;
+    height: 38rem;
+  }
+
+  .eclipse {
+    width: 26rem;
+    height: 26rem;
+  }
+
+  .planet2 {
+    width: 32px;
+    height: 32px;
+    right: 90px;
+    top: 70px;
+  }
+
+  .planet1 {
+    right: 135px;
+    top: 90px;
+  }
+}
